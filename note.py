@@ -1,0 +1,10 @@
+#my_stuff = {'breakfast': 'mintrice','lunch':'not done'}
+#print(my_stuff)
+#tpl=('a','maria','rohit')
+#print(tpl[0])
+x=set()
+x.add(4)
+x.add(5)
+x.add(1)
+x.add(1)
+print (x)
