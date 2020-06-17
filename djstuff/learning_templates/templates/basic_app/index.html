@@ -4,5 +4,6 @@
   {% block body_block %}
   <h1>Welcome to index</h1>
   <a href="{% url 'basic_app:relative'%}"><h3> Go to Relative</h3></a>
-
+  {{text | cut:'world'}}
+  {{number|add:"99"}}
   {% endblock %}
