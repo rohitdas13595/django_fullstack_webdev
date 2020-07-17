@@ -21,6 +21,13 @@ class Group(models.Model):
     def save(self,*args,**kwargs):
         self.slug= slugify(self.name)
         self.description_html= misaka.html(self.description)
+        super().save(*args,**kwargs)
+
+    def get_absolute_url(self):
+        return reverse('groups:single',kwargs={'slug':self.slug})
+
+    class Meta:
+        ordering = ['name']
 
 
 class GroupMember(models.Model):
@@ -30,5 +37,5 @@ class GroupMember(models.Model):
     def __str__(self):
         return self.user.username
 
-    class Meta():
+    class Meta:
         unique_together= ('group','user')
