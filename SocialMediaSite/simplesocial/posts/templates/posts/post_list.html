@@ -1,15 +1,16 @@
 {% extends "posts/post_base.html" %}
+{% load humanize %}
 
-{% block pre_post %}
+{% block prepost %}
 <div class="col-md-4">
   {% if request.user.is_authenticated %}
     <div class="card card-with-shadow">
       <div class="content">
-        <h5 class="title"></h5>
+        <h5 class="title">Your groups</h5>
         <ul class="list-unstyled">
           {% for member_group in get_user_groups %}
           <li class="group li-with-bullet">
-            <a href="{% url 'groups:single' slug=member_group.group.slug %}"></a>
+            <a href="{% url 'groups:single' slug=member_group.group.slug %}">{{member_group.group.name}}</a>
           </li>
           {% endfor %}
         </ul>
@@ -22,7 +23,7 @@
       <ul class="list-unstyled">
         {% for other_group in get_other_groups %}
         <li class="li-with-bullet">
-          <a href="{% url 'groups:single' slug=other_group.slug %}"></a>
+          <a href="{% url 'groups:single' slug=other_group.slug %}">{{other_group.name}}</a>
         </li>
         {% endfor %}
       </ul>

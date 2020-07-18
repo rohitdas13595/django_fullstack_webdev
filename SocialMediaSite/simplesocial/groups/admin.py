@@ -5,5 +5,5 @@ from . import models
 # Register your models here.
 class GroupMemberInline(admin.TabularInline):
     model= models.GroupMember
-    
-admin.site.register(model.Group)
+
+admin.site.register(models.Group)

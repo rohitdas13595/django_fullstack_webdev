@@ -1,4 +1,4 @@
-{% extends "groups/groups_base.html" %}
+{% extends "groups/group_base.html" %}
 {% block pregroup %}
 <div class="col-md-4">
   <div class="content">
@@ -9,10 +9,10 @@
         </a>
     {% endif %}
       <h2>Groups</h2>
-      <p>Welcome to the groups page.</p>
+      <p>Welcome to the groups page! Select a Group with a shared interest!</p>
   </div>
   {% if user.is_authenticated %}
-  <a href="{% url 'groups.create'%}"class="btn btn-md btn-fill btn-warning ">
+  <a href="{% url 'groups:create'%}"class="btn btn-md btn-fill btn-warning ">
     <span class= 'glyphicon glyphicon-plus-sign'>Create New Group</span>
   </a>
   {% endif %}

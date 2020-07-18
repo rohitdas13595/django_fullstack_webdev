@@ -3,11 +3,11 @@
 
 {% block post_content %}
 <h4>Create a New Post</h4>
-<form id="postForm" action="{% url 'posts:create' %}" method="post">
+<form id="postForm" action="{% url 'posts:create' %}" method="POST">
   {% csrf_token %}
   {% bootstrap_form form %}
   <input type="submit" class="btn btn-primary btn-large" value="Post">
-  
+
 
 </form>
 
