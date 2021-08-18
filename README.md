@@ -2,5 +2,5 @@
 sample django project
 
 
-This is the repository of sam[le web projects in django.
+This is the repository of sample web projects in django.
 Navigate to djstuff.
